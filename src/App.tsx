@@ -6,7 +6,7 @@ import "Styles/styles.scss";
 
 const App: React.FC = () => (
   <ThemeProvider theme={theme}>
-    <Review />;
+    <Review />
   </ThemeProvider>
 );
 

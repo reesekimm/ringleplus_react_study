@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "@/Header";
+import ReviewBody from "@/ReviewBody";
 import { Grid } from "@material-ui/core";
 
 const headerTitle =
@@ -9,6 +10,7 @@ const Review: React.FC = () => {
   return (
     <Grid container direction="column">
       <Header title={headerTitle} />
+      <ReviewBody />
     </Grid>
   );
 };

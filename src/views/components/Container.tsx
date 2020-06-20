@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
+import Tooltip from "./Tooltip";
 
 interface Options {
   icon: JSX.Element;
@@ -22,6 +23,7 @@ const Container: React.FC<ContainerProps> = ({
           <Grid container direction="row">
             {icon}
             <Typography>{title}</Typography>
+            <Tooltip description={description} />
           </Grid>
         </Grid>
         <Grid item>

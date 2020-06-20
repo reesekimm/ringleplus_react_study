@@ -1,6 +1,7 @@
 import React from "react";
+import Review from "./pages/Review";
 import "Styles/styles.scss";
 
-export default () => {
-  return <h1>Hello world!</h1>;
-};
+const App: React.FC = () => <Review />;
+
+export default App;

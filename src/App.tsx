@@ -1,5 +1,5 @@
 import React from "react";
-import Review from "./pages/Review";
+import Review from "Pages/Review";
 import "Styles/styles.scss";
 
 const App: React.FC = () => <Review />;

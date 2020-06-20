@@ -1,0 +1,10 @@
+.word-card__wrapper {
+  background: $purple;
+  color: $white;
+  border-radius: 5px;
+  width: fit-content;
+  max-width: 300px;
+  overflow-wrap: break-word;
+  padding: 10px;
+  font-size: 12px;
+}

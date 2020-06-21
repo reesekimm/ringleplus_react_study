@@ -80,22 +80,26 @@ const SuggestionCard: React.FC<SuggestionProps> = ({
         <Collapse in={feedbackExpanded} timeout="auto" unmountOnExit>
           {feedback.contents}
         </Collapse>
-        <CardActions disableSpacing>
-          <Typography>{contents.title}</Typography>
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: contentsExpanded,
-            })}
-            onClick={handleExpandClickContents}
-            aria-expanded={contentsExpanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <Collapse in={contentsExpanded} timeout="auto" unmountOnExit>
-          {contents.contents}
-        </Collapse>
+        {contents && contents.title && (
+          <>
+            <CardActions disableSpacing>
+              <Typography>{contents.title}</Typography>
+              <IconButton
+                className={clsx(classes.expand, {
+                  [classes.expandOpen]: contentsExpanded,
+                })}
+                onClick={handleExpandClickContents}
+                aria-expanded={contentsExpanded}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            </CardActions>
+            <Collapse in={contentsExpanded} timeout="auto" unmountOnExit>
+              {contents.contents}
+            </Collapse>
+          </>
+        )}
       </Card>
     </div>
   );

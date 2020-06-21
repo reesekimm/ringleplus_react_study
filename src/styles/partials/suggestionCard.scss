@@ -1,0 +1,14 @@
+.card__contents {
+  padding: 10px;
+  font-size: $sm;
+  color: $gray;
+  display: flex;
+  .card__text {
+    margin-right: 10px;
+  }
+  .card__icon {
+    cursor: pointer;
+    height: fit-content;
+    font-size: 0px;
+  }
+}

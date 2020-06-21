@@ -12,6 +12,22 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: "100%",
+      margin: "10px 0",
+      fontSize: "11px",
+    },
+    action: {
+      cursor: "pointer",
+    },
+    typoContents: {
+      fontSize: "11px",
+      color: "#7a5de8",
+      fontWeight: "bold",
+    },
+    typoFeedback: {
+      fontSize: "11px",
+      color: "#9b9b9b",
+      cursor: "pointer",
+      textDecoration: "underline",
     },
     expand: {
       transform: "rotate(0deg)",
@@ -58,50 +74,48 @@ const SuggestionCard: React.FC<SuggestionProps> = ({
   };
 
   return (
-    <div className="suggestion-card">
-      <Card className={classes.root}>
-        <div>
-          <div>{text}</div>
-          <span>{icon}</span>
-        </div>
-        <CardActions disableSpacing>
-          <Typography>{feedback.title}</Typography>
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: feedbackExpanded,
-            })}
-            onClick={handleExpandClickFeedback}
-            aria-expanded={feedbackExpanded}
+    <Card className={classes.root}>
+      <div className="card__contents">
+        <div className="card__text">{text}</div>
+        <div className="card__icon">{icon}</div>
+      </div>
+      {contents && contents.title && (
+        <>
+          <CardActions
+            disableSpacing
+            className={classes.action}
+            onClick={handleExpandClickContents}
+            aria-expanded={contentsExpanded}
             aria-label="show more"
           >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <Collapse in={feedbackExpanded} timeout="auto" unmountOnExit>
-          {feedback.contents}
-        </Collapse>
-        {contents && contents.title && (
-          <>
-            <CardActions disableSpacing>
-              <Typography>{contents.title}</Typography>
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: contentsExpanded,
-                })}
-                onClick={handleExpandClickContents}
-                aria-expanded={contentsExpanded}
-                aria-label="show more"
-              >
-                <ExpandMoreIcon />
-              </IconButton>
-            </CardActions>
-            <Collapse in={contentsExpanded} timeout="auto" unmountOnExit>
-              {contents.contents}
-            </Collapse>
-          </>
-        )}
-      </Card>
-    </div>
+            <Typography className={classes.typoContents}>{contents.title}</Typography>
+            <IconButton
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: contentsExpanded,
+              })}
+            >
+              <ExpandMoreIcon />
+            </IconButton>
+          </CardActions>
+          <Collapse in={contentsExpanded} timeout="auto" unmountOnExit>
+            {contents.contents}
+          </Collapse>
+        </>
+      )}
+      <CardActions disableSpacing>
+        <Typography
+          className={classes.typoFeedback}
+          onClick={handleExpandClickFeedback}
+          aria-expanded={feedbackExpanded}
+          aria-label="show feedback form"
+        >
+          {feedback.title}
+        </Typography>
+      </CardActions>
+      <Collapse in={feedbackExpanded} timeout="auto" unmountOnExit>
+        {feedback.contents}
+      </Collapse>
+    </Card>
   );
 };
 

@@ -1,0 +1,19 @@
+.tooltip__wrapper {
+  position: relative;
+  .tooltip__icon {
+    color: $gray;
+  }
+  .tooltip__box {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    color: $white;
+    background: $black;
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: $sm;
+    font-weight: lighter;
+    z-index: 99;
+  }
+}

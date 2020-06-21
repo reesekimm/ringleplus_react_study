@@ -1,0 +1,36 @@
+.speech-bubble__wrapper {
+  width: 100%;
+  margin: 12px 0;
+  display: flex;
+  align-items: flex-end;
+  .speech-bubble__img {
+    top: 0;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    margin-top: 0;
+    margin-bottom: auto;
+  }
+  .speech-bubble__text {
+    flex: 1;
+    overflow-wrap: break-word;
+    margin: 0 10px;
+    padding: 10px;
+    font-size: $sm;
+    line-height: 1.3;
+    border-radius: 5px;
+    &.tutor {
+      box-shadow: 0 0 9px 0 rgba(122, 93, 232, 0.15);
+    }
+    &.student {
+      color: $white;
+      background: $purple;
+      opacity: 0.7;
+      margin-right: 0;
+    }
+  }
+  .speech-bubble__time {
+    font-size: $sm;
+    color: $gray;
+  }
+}

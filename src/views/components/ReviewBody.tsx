@@ -5,9 +5,9 @@ import * as options from "Const/containerOptions";
 
 const ReviewBody: React.FC = () => (
   <div className="review-body__wrapper">
-    <Grid item container>
-      <Grid item container xs={12} md={7} direction="column">
-        <Grid item container>
+    <Grid item container spacing={2}>
+      <Grid item container xs={12} md={7} direction="column" spacing={2}>
+        <Grid item container spacing={2}>
           <Grid item xs={12} sm={7}>
             <Container options={options.chat} />
           </Grid>
@@ -17,7 +17,7 @@ const ReviewBody: React.FC = () => (
         </Grid>
         <Grid item>audio controller</Grid>
       </Grid>
-      <Grid item container xs={12} md={5} direction="column">
+      <Grid item container xs={12} md={5} direction="column" spacing={2}>
         <Grid item>
           <Container options={options.feedback} />
         </Grid>

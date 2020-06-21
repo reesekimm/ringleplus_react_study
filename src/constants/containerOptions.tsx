@@ -3,6 +3,36 @@ import ForumIcon from "@material-ui/icons/Forum";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import FeedbackIcon from "@material-ui/icons/Feedback";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
+import WordCard from "@/WordCard";
+import SpeechBubbleTutor from "@/SpeechBubbleTutor";
+import SpeechBubbleStudent from "@/SpeechBubbleStudent";
+import SuggestionCard from "@/SuggestionCard";
+import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+
+const bubbleDataTutor = {
+  profileImageUrl:
+    "https://s3-ap-northeast-2.amazonaws.com/ringleimageassets/images/tutors/51918_low.jpeg",
+  text:
+    "And so you said everything is changed, which is perfect English way. You don't want me to talk about the grammar. Right. You just want me to write down the answers I looked on your",
+  time: "11:35",
+};
+
+const bubbleDataStudent = {
+  text:
+    "Yeah, yeah, yeah, yeah. I want you to focus on the sentences that I can make it better later.",
+  time: "12:05",
+};
+
+const suggestion = {
+  text:
+    "필러워드를 사용할 확률은 11% 입니다. 필러워드 사용 빈도가 적당합니다! 그래도 의식적으로 줄여보세요 :)",
+  icon: <ThumbUpAltIcon />,
+  feedback: {
+    title: "링글의 제안이 정확하지 않은 것 같아요.",
+    contents: <textarea></textarea>,
+  },
+  contents: { title: "자주 사용하는 단어", contents: <div>contents component!</div> },
+};
 
 export const chat = {
   icon: <ForumIcon />,
@@ -28,7 +58,13 @@ export const chat = {
       튜터의 스크립트 변환 정도와 비교하여 나의 발음을 체크해보세요.
     </span>
   ),
-  contents: "",
+  contents: (
+    <div>
+      <WordCard word="helloworldmynameisreesehelloworldmynameisreesehelloworldmynameisreesehelloworldmynameisreese" />
+      <SpeechBubbleTutor data={bubbleDataTutor} />
+      <SpeechBubbleStudent data={bubbleDataStudent} />
+    </div>
+  ),
 };
 
 export const suggestions = {
@@ -45,7 +81,12 @@ export const suggestions = {
       의미합니다. 권장값은 약 30 % 내 입니다.
     </span>
   ),
-  contents: "",
+  contents: (
+    <>
+      <SuggestionCard data={suggestion} />
+      <SuggestionCard data={suggestion} />
+    </>
+  ),
 };
 
 export const feedback = {

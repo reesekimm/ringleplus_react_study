@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "@/common/Header";
-import ReviewBody from "@/review/ReviewBody";
+import ReviewBody from "@/review";
 import { Grid } from "@material-ui/core";
 
 const headerTitle =

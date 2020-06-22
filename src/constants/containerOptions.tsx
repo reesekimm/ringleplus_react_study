@@ -3,10 +3,10 @@ import ForumIcon from "@material-ui/icons/Forum";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import FeedbackIcon from "@material-ui/icons/Feedback";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
-import WordCard from "@/WordCard";
-import SpeechBubbleTutor from "@/SpeechBubbleTutor";
-import SpeechBubbleStudent from "@/SpeechBubbleStudent";
-import SuggestionCard from "@/SuggestionCard";
+import WordCard from "@/common/WordCard";
+import SpeechBubbleTutor from "@/common/SpeechBubbleTutor";
+import SpeechBubbleStudent from "@/common/SpeechBubbleStudent";
+import SuggestionCard from "@/common/SuggestionCard";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 
 const bubbleDataTutor = {

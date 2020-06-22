@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchReviewData } from "../../redux/review/reviewActions";
+import { fetchReviewData } from "Redux/review/reviewActions";
 import Header from "@/common/Header";
 import ReviewBody from "@/review";
 import { Grid } from "@material-ui/core";

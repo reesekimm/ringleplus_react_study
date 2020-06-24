@@ -42,6 +42,7 @@ module.exports = {
       Pages: path.resolve(__dirname, "./src/views/pages/"),
       Const: path.resolve(__dirname, "./src/constants/"),
       Styles: path.resolve(__dirname, "./src/styles/"),
+      Redux: path.resolve(__dirname, "./src/redux/"),
     },
   },
   plugins: [

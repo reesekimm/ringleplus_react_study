@@ -4,24 +4,13 @@ import { Grid } from "@material-ui/core";
 import Container from "@/common/Container";
 import FeedbackIcon from "@material-ui/icons/Feedback";
 
-type Payload = {
-  [key: string]: object;
+type Score = {
+  score_type: string;
+  score: string;
+  max_score: string;
 };
 
-type ReviewData = {
-  loading: string;
-  payload: Payload;
-};
-
-type FeedbackProps = {
-  review: ReviewData;
-};
-
-const Feedback: React.FC<FeedbackProps> = ({ review }) => {
-  const feedbackData = review;
-
-  console.log(feedbackData);
-
+const Feedback: React.FC = ({ review }: any) => {
   const feedbackObj = {
     icon: <FeedbackIcon />,
     title: "Tutor's Feedback",
@@ -31,14 +20,29 @@ const Feedback: React.FC<FeedbackProps> = ({ review }) => {
         점수를 바탕으로 IELTS, TOEIC SPEAKING, TOEFL 예상 점수도 확인할 수 있습니다.
       </span>
     ),
-    contents: <div>hello</div>,
+    contents: review ? (
+      <div>
+        <div>{review[2].score_result[0].overall_comment}</div>
+        <table>
+          <tbody>
+            {review[2].score_result.slice(1).map(({ score_type, score, max_score }: Score) => (
+              <tr key={score_type}>
+                <td>{score_type}</td>
+                <td>
+                  {score}
+                  {max_score}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    ) : (
+      ""
+    ),
   };
 
-  return (
-    <Grid item>
-      <Container options={feedbackObj} />
-    </Grid>
-  );
+  return <Grid item>{review && review[2] && <Container options={feedbackObj} />}</Grid>;
 };
 
 const mapStateToProps = (state: any) => ({

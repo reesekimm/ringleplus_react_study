@@ -15,7 +15,7 @@ type ReviewData = {
 
 type ReviewProps = {
   reviewData: ReviewData;
-  fetchReviewData: any;
+  fetchReviewData: Function;
 };
 
 const Review: React.FC<ReviewProps> = ({ reviewData: { loading, error }, fetchReviewData }) => {

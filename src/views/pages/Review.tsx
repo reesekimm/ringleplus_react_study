@@ -41,4 +41,10 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchReviewData })(Review);
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    fetchReviewData: () => dispatch(fetchReviewData()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Review);

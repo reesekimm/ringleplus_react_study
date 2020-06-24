@@ -8,24 +8,17 @@ import { Grid } from "@material-ui/core";
 const headerTitle =
   "What are you getting into it? – Notes from a start-up founder: Immersion and concentration";
 
-interface ReviewData {
+type ReviewData = {
   loading: boolean;
   error: string;
-  script: object;
-  suggestions: object;
-  feedback: object;
-  analysis: object;
-}
+};
 
-interface ReviewProps {
+type ReviewProps = {
   reviewData: ReviewData;
   fetchReviewData: any;
-}
+};
 
-const Review: React.FC<ReviewProps> = ({
-  reviewData: { loading, error, script, suggestions, feedback, analysis },
-  fetchReviewData,
-}) => {
+const Review: React.FC<ReviewProps> = ({ reviewData: { loading, error }, fetchReviewData }) => {
   useEffect(() => {
     fetchReviewData();
   }, []);

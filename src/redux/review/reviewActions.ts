@@ -1,19 +1,19 @@
 import { FETCH_REVIEW_REQUEST, FETCH_REVIEW_SUCCESS, FETCH_REVIEW_FAILURE } from "./reviewTypes";
 
-export const fetchReviewRequest = (): object => {
+export const fetchReviewRequest = () => {
   return {
     type: FETCH_REVIEW_REQUEST,
   };
 };
 
-export const fetchReviewSuccess = (data: object): object => {
+export const fetchReviewSuccess = (data: object) => {
   return {
     type: FETCH_REVIEW_SUCCESS,
     payload: data,
   };
 };
 
-export const fetchReviewFailure = (error: string): object => {
+export const fetchReviewFailure = (error: string) => {
   return {
     type: FETCH_REVIEW_FAILURE,
     payload: error,
@@ -41,9 +41,9 @@ export const fetchReviewData = () => async (dispatch: any) => {
   try {
     const data = await Promise.all(urls.map(getResponse));
     console.log(data);
-    // dispatch(fetchReviewSuccess(data));
+    dispatch(fetchReviewSuccess(data));
   } catch (e) {
     console.log(e);
-    // dispatch(fetchReviewFailure(""))
+    dispatch(fetchReviewFailure(e));
   }
 };

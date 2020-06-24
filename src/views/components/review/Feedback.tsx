@@ -22,14 +22,14 @@ const Feedback: React.FC = ({ review }: any) => {
     ),
     contents: review ? (
       <div>
-        <div>{review[2].score_result[0].overall_comment}</div>
-        <table>
+        <div className="feedback__comment">{review[2].score_result[0].overall_comment}</div>
+        <table className="feedback__score-table">
           <tbody>
             {review[2].score_result.slice(1).map(({ score_type, score, max_score }: Score) => (
               <tr key={score_type}>
-                <td>{score_type}</td>
+                <td className="score-type">{score_type}</td>
                 <td>
-                  {score}
+                  <span>{score}</span>
                   {max_score}
                 </td>
               </tr>

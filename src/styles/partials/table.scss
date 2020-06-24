@@ -1,0 +1,11 @@
+.feedback__comment {
+  font-size: $md;
+  margin-bottom: 10px;
+}
+
+.feedback__score-table {
+  width: 40%;
+  .score-type {
+    font-weight: bold;
+  }
+}

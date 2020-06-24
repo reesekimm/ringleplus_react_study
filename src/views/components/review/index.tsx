@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
+import Feedback from "./Feedback";
 import Container from "@/common/Container";
 import * as options from "Const/containerOptions";
 
@@ -18,9 +19,7 @@ const ReviewBody: React.FC = () => (
         <Grid item>audio controller</Grid>
       </Grid>
       <Grid item container xs={12} md={5} direction="column" spacing={2}>
-        <Grid item>
-          <Container options={options.feedback} />
-        </Grid>
+        <Feedback />
         <Grid item>
           <Container options={options.chart} />
         </Grid>

@@ -28,7 +28,7 @@ const Review: React.FC<ReviewProps> = ({ reviewData: { loading, error }, fetchRe
   ) : error ? (
     <h2>error</h2>
   ) : (
-    <Grid container direction="column">
+    <Grid container direction="column" wrap="nowrap" style={{ height: "100%" }}>
       <Header title={headerTitle} />
       <ReviewBody />
     </Grid>

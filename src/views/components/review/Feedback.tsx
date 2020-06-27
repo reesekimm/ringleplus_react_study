@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Grid } from "@material-ui/core";
 import Container from "@/common/Container";
 import FeedbackIcon from "@material-ui/icons/Feedback";
 
@@ -21,7 +20,7 @@ const Feedback: React.FC = ({ review }: any) => {
       </span>
     ),
     contents: review ? (
-      <div>
+      <div className="feedback__wrapper">
         <div className="feedback__comment">{review[2].score_result[0].overall_comment}</div>
         <table className="feedback__score-table">
           <tbody>
@@ -42,7 +41,7 @@ const Feedback: React.FC = ({ review }: any) => {
     ),
   };
 
-  return <Grid item>{review && review[2] && <Container options={feedbackObj} />}</Grid>;
+  return <Container options={feedbackObj} />;
 };
 
 const mapStateToProps = (state: any) => ({
